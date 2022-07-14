@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS user_addresses (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  user_id BIGINT NOT NULL REFERENCES users(id),
+  state VARCHAR(55) NOT NULL,
+  city VARCHAR(55) NOT NULL,
+  street_address VARCHAR(255) NOT NULL,
+  postal_code VARCHAR(25) UNIQUE NOT NULL,
+  full_address VARCHAR(255) NOT NULL,
+  address_description VARCHAR(255) NOT NULL
+);
